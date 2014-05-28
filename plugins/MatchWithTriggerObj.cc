@@ -38,7 +38,7 @@ MatchWithTriggerObj::analyze(const edm::Event& iEvent, const edm::EventSetup& iS
     
     
     bool changedConfig = false;
-    if (!hltConfig.init(iEvent.getRun(), iSetup, "HLT2", changedConfig)) {
+    if (!hltConfig.init(iEvent.getRun(), iSetup, "HLT", changedConfig)) {
         cout << "Initialization of HLTConfigProvider failed!!" << endl;
         return;
     }
@@ -52,7 +52,7 @@ MatchWithTriggerObj::analyze(const edm::Event& iEvent, const edm::EventSetup& iS
        
     }
     
-    edm::InputTag triggerResultsLabel = edm::InputTag("TriggerResults", "", "HLT2");
+    edm::InputTag triggerResultsLabel = edm::InputTag("TriggerResults", "", "HLT");
     edm::Handle<edm::TriggerResults> triggerResults;
     iEvent.getByLabel(triggerResultsLabel, triggerResults);
     
